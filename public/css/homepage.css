@@ -1,0 +1,94 @@
+/* 3d */
+
+#canvas {
+  background: url("./images/background_06.jpg") no-repeat center/cover;
+}
+
+.wrap {
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  margin: auto;
+  position: relative;
+  position: absolute;
+  z-index: -1;
+}
+
+.cube img {
+  position: absolute;
+  opacity: 1;
+  background-color: aliceblue;
+}
+
+.cube img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(100px);
+}
+.cube img:nth-child(2) {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.cube img:nth-child(3) {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.cube img:nth-child(4) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.cube img:nth-child(5) {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.cube img:nth-child(6) {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+.reference {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: antiquewhite;
+}
+
+.reference a:visited {
+  color: antiquewhite;
+}
+
+@keyframes loop1 {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+@keyframes loop2 {
+  from {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+  to {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+.cube0,
+.cube2,
+.cube4,
+.cube6,
+.cube8 {
+  animation: loop1 10s linear infinite;
+}
+
+.cube1,
+.cube3,
+.cube5,
+.cube7,
+.cube9 {
+  animation: loop2 11s linear infinite;
+}
